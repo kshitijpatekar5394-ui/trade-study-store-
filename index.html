@@ -1,110 +1,170 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trade & Study | Trading PDFs</title>
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: white;
-    }
-    header {
-      padding: 22px;
-      border-bottom: 1px solid #26314a;
-      font-size: 21px;
-      font-weight: bold;
-    }
-    header span { color: #a78bfa; }
-    .hero {
-      padding: 48px 22px 30px;
-      text-align: center;
-    }
-    .hero h1 { font-size: 36px; margin-bottom: 12px; }
-    .hero p { color: #b8c2d8; line-height: 1.6; }
-    .tag { color: #a78bfa; font-size: 12px; letter-spacing: 2px; }
-    main { padding: 20px; max-width: 850px; margin: auto; }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-    }
-    .card {
-      background: #151d32;
-      padding: 22px;
-      border: 1px solid #293653;
-      border-radius: 16px;
-    }
-    .cover {
-      background: #222044;
-      padding: 25px 12px;
-      text-align: center;
-      border-radius: 10px;
-      font-size: 27px;
-    }
-    .card p { color: #b8c2d8; line-height: 1.5; }
-    .price { font-size: 23px; font-weight: bold; }
-    button {
-      width: 100%;
-      padding: 13px;
-      border: 0;
-      border-radius: 9px;
-      background: #7c3aed;
-      color: white;
-      font-weight: bold;
-      font-size: 15px;
-      margin-top: 10px;
-    }
-    footer {
-      text-align: center;
-      padding: 35px 15px;
-      color: #9ca9c2;
-      font-size: 13px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade & Study | Premium Trading PDFs</title>
+<style>
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: white;
+}
+header {
+  padding: 22px;
+  border-bottom: 1px solid #26314a;
+  font-size: 21px;
+  font-weight: bold;
+}
+header span { color: #78b7fa; }
+.hero {
+  padding: 48px 20px 30px;
+  text-align: center;
+}
+.tag {
+  color: #78b7fa;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.hero h1 {
+  font-size: 34px;
+  margin-bottom: 12px;
+}
+.hero p {
+  color: #b8c2d8;
+  line-height: 1.6;
+}
+main {
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+main h2 { margin-bottom: 18px; }
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+.card {
+  background: #151d32;
+  padding: 22px;
+  border: 1px solid #293653;
+  border-radius: 16px;
+}
+.cover {
+  background: linear-gradient(135deg, #222044, #17415b);
+  padding: 25px 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+.card h3 { line-height: 1.4; }
+.card p {
+  color: #b8c2d8;
+  line-height: 1.6;
+  font-size: 14px;
+}
+.details {
+  color: #78b7fa;
+  font-size: 13px;
+}
+.price {
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 18px;
+}
+button {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 9px;
+  background: #7c3aed;
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 12px;
+  cursor: pointer;
+}
+.note {
+  color: #9ca9c2;
+  font-size: 12px;
+  line-height: 1.5;
+}
+footer {
+  text-align: center;
+  padding: 35px 15px;
+  color: #9ca9c2;
+  font-size: 13px;
+  line-height: 1.7;
+}
+</style>
 </head>
 <body>
-  <header>TRADE <span>&</span> STUDY</header>
 
-  <section class="hero">
-    <div class="tag">YOUR TRADING LIBRARY</div>
-    <h1>Trade smarter.</h1>
-    <p>Trading guides, strategies and educational PDFs.<br>
-    Learn at your own pace.</p>
-  </section>
+<header>TRADE <span>&</span> STUDY</header>
 
-  <main>
-    <h2>Explore our PDFs</h2>
-    <div class="products">
-      <article class="card">
-        <div class="cover">📘</div>
-        <h3>Trading Basics</h3>
-        <p>A beginner-friendly educational guide.</p>
-        <div class="price">₹—</div>
-        <button onclick="alert('Product link coming soon!')">
-          Buy Now
-        </button>
-      </article>
+<section class="hero">
+  <div class="tag">YOUR TRADING LIBRARY</div>
+  <h1>Trade Smarter.</h1>
+  <p>Explore trading concepts through easy-to-understand Hinglish PDFs.<br>
+  Learn at your own pace.</p>
+</section>
 
-      <article class="card">
-        <div class="cover">📈</div>
-        <h3>Strategy Guide</h3>
-        <p>Explore trading concepts and risk management.</p>
-        <div class="price">₹—</div>
-        <button onclick="alert('Product link coming soon!')">
-          Buy Now
-        </button>
-      </article>
-    </div>
-  </main>
+<main>
+<h2>Premium Trading PDFs</h2>
+<p class="note">Digital educational guides · 25+ pages each</p>
 
-  <footer>
-    Educational content only. Trading involves financial risk.<br>
-    © 2026 Trade & Study
-  </footer>
+<div class="products">
+
+<article class="card">
+  <div class="cover">📈 ICT & SMC</div>
+  <h3>ICT & Smart Money Concepts</h3>
+  <p>Explore ICT and Smart Money trading concepts in easy Hinglish. A beginner-friendly guide to help you understand the terminology and chart concepts covered in this field.</p>
+  <p class="details">25+ pages · Hinglish PDF</p>
+  <div class="price">₹199</div>
+  <button onclick="alert('Secure payment and PDF delivery will be available soon.')">Buy Now</button>
+</article>
+
+<article class="card">
+  <div class="cover">🎯 SUPPORT / RESISTANCE</div>
+  <h3>Support & Resistance Mastery</h3>
+  <p>Learn the basics of support and resistance, understand key price levels, and explore how traders study these areas on charts.</p>
+  <p class="details">25+ pages · Hinglish PDF</p>
+  <div class="price">₹199</div>
+  <button onclick="alert('Secure payment and PDF delivery will be available soon.')">Buy Now</button>
+</article>
+
+<article class="card">
+  <div class="cover">🚀 BREAKOUT</div>
+  <h3>Breakout & Fakeout Strategy Guide</h3>
+  <p>Understand breakout and false-breakout concepts, and learn what traders look for when studying price movements around key levels.</p>
+  <p class="details">25+ pages · Hinglish PDF</p>
+  <div class="price">₹199</div>
+  <button onclick="alert('Secure payment and PDF delivery will be available soon.')">Buy Now</button>
+</article>
+
+<article class="card">
+  <div class="cover">🧩 BLOCKS</div>
+  <h3>Master Breaker & Rejection Blocks</h3>
+  <p>Explore breaker blocks and rejection blocks with a simple Hinglish introduction to these chart-analysis concepts.</p>
+  <p class="details">25+ pages · Hinglish PDF</p>
+  <div class="price">₹199</div>
+  <button onclick="alert('Secure payment and PDF delivery will be available soon.')">Buy Now</button>
+</article>
+
+</div>
+
+<p class="note">These are educational products. Please review the actual PDF contents before publishing the descriptions. Trading involves risk; profits are not guaranteed.</p>
+</main>
+
+<footer>
+  TRADE & STUDY<br>
+  Educational content only. Trading involves financial risk.<br>
+  © 2026 Trade & Study
+</footer>
+
 </body>
 </html>
