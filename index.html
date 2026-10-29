@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trade & Study | Trading PDFs</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b1020;
+      color: white;
+    }
+    header {
+      padding: 22px;
+      border-bottom: 1px solid #26314a;
+      font-size: 21px;
+      font-weight: bold;
+    }
+    header span { color: #a78bfa; }
+    .hero {
+      padding: 48px 22px 30px;
+      text-align: center;
+    }
+    .hero h1 { font-size: 36px; margin-bottom: 12px; }
+    .hero p { color: #b8c2d8; line-height: 1.6; }
+    .tag { color: #a78bfa; font-size: 12px; letter-spacing: 2px; }
+    main { padding: 20px; max-width: 850px; margin: auto; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #151d32;
+      padding: 22px;
+      border: 1px solid #293653;
+      border-radius: 16px;
+    }
+    .cover {
+      background: #222044;
+      padding: 25px 12px;
+      text-align: center;
+      border-radius: 10px;
+      font-size: 27px;
+    }
+    .card p { color: #b8c2d8; line-height: 1.5; }
+    .price { font-size: 23px; font-weight: bold; }
+    button {
+      width: 100%;
+      padding: 13px;
+      border: 0;
+      border-radius: 9px;
+      background: #7c3aed;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 35px 15px;
+      color: #9ca9c2;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>TRADE <span>&</span> STUDY</header>
+
+  <section class="hero">
+    <div class="tag">YOUR TRADING LIBRARY</div>
+    <h1>Trade smarter.</h1>
+    <p>Trading guides, strategies and educational PDFs.<br>
+    Learn at your own pace.</p>
+  </section>
+
+  <main>
+    <h2>Explore our PDFs</h2>
+    <div class="products">
+      <article class="card">
+        <div class="cover">📘</div>
+        <h3>Trading Basics</h3>
+        <p>A beginner-friendly educational guide.</p>
+        <div class="price">₹—</div>
+        <button onclick="alert('Product link coming soon!')">
+          Buy Now
+        </button>
+      </article>
+
+      <article class="card">
+        <div class="cover">📈</div>
+        <h3>Strategy Guide</h3>
+        <p>Explore trading concepts and risk management.</p>
+        <div class="price">₹—</div>
+        <button onclick="alert('Product link coming soon!')">
+          Buy Now
+        </button>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    Educational content only. Trading involves financial risk.<br>
+    © 2026 Trade & Study
+  </footer>
+</body>
+</html>
