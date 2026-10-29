@@ -1,259 +1,218 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080d18">
-  <title>Trade & Study | Trading PDF Library</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trade & Study | Trading PDF Store</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background: #080d18;
-      color: #f5f7ff;
-      line-height: 1.6;
-    }
-
-    header {
-      padding: 22px 18px;
-      border-bottom: 1px solid #25334b;
-      font-size: 22px;
-      font-weight: bold;
-      text-align: center;
-      letter-spacing: 1px;
-    }
-
-    header span {
-      color: #66e3c4;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 58px 20px 42px;
-      background: radial-gradient(ellipse at top, #18334a, #080d18 72%);
-    }
-
-    .tag {
-      color: #66e3c4;
-      font-size: 12px;
-      letter-spacing: 2px;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-size: clamp(32px, 7vw, 48px);
-      line-height: 1.15;
-      margin: 14px 0;
-    }
-
-    .hero p {
-      max-width: 540px;
-      margin: 0 auto;
-      color: #b9c6d8;
-    }
-
-    main {
-      max-width: 1000px;
-      margin: auto;
-      padding: 30px 18px 45px;
-    }
-
-    .section-title {
-      font-size: 25px;
-      margin-bottom: 6px;
-    }
-
-    .subtitle {
-      color: #9eacc0;
-      margin-bottom: 24px;
-      font-size: 14px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      display: flex;
-      flex-direction: column;
-      background: #111b2b;
-      border: 1px solid #293950;
-      border-radius: 16px;
-      padding: 22px;
-    }
-
-    .cover {
-      background: linear-gradient(135deg, #193d48, #202548);
-      border-radius: 11px;
-      padding: 24px 12px;
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 18px;
-    }
-
-    .cover small {
-      display: block;
-      font-size: 11px;
-      color: #a6f4e3;
-      letter-spacing: 2px;
-      margin-top: 5px;
-    }
-
-    h2 {
-      font-size: 19px;
-      line-height: 1.4;
-      margin-bottom: 10px;
-    }
-
-    .description {
-      color: #bdc8d8;
-      font-size: 14px;
-      flex-grow: 1;
-    }
-
-    .details {
-      color: #91a5bd;
-      font-size: 12px;
-      margin-top: 14px;
-    }
-
-    .price {
-      font-size: 27px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-
-    .buy {
-      display: block;
-      width: 100%;
-      text-align: center;
-      background: #66e3c4;
-      color: #07130f;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 13px;
-      border-radius: 9px;
-      margin-top: 5px;
-    }
-
-    .buy:focus,
-    .buy:hover {
-      background: #8cf3d9;
-    }
-
-    .note {
-      color: #aebbd0;
-      font-size: 13px;
-      background: #101a29;
-      border: 1px solid #293950;
-      border-radius: 12px;
-      padding: 16px;
-      margin-top: 25px;
-    }
-
-    footer {
-      border-top: 1px solid #25334b;
-      text-align: center;
-      padding: 25px 18px;
-      color: #9eacc0;
-      font-size: 12px;
-    }
-  </style>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#0b1020;
+  color:#fff;
+}
+header{
+  padding:22px;
+  border-bottom:1px solid #26314a;
+  font-size:21px;
+  font-weight:bold;
+}
+header span{color:#78b7fa}
+.hero{
+  text-align:center;
+  padding:42px 18px 28px;
+}
+.tag{
+  color:#78b7fa;
+  font-size:12px;
+  letter-spacing:2px;
+}
+h1{font-size:34px;margin:12px 0}
+.hero p{color:#b8c2d8;line-height:1.6}
+main{max-width:900px;margin:auto;padding:20px}
+h2{margin-bottom:18px}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+}
+.card{
+  background:#151d32;
+  padding:20px;
+  border:1px solid #293653;
+  border-radius:16px;
+}
+.cover{
+  background:linear-gradient(135deg,#223044,#17415b);
+  padding:24px 10px;
+  text-align:center;
+  border-radius:10px;
+  font-size:22px;
+  margin-bottom:16px;
+}
+.card h3{line-height:1.4}
+.card p{color:#b8c2d8;line-height:1.6;font-size:14px}
+.details{color:#78b7fa;font-size:13px}
+.price{font-size:25px;font-weight:bold;margin-top:18px}
+button,.button{
+  display:block;
+  width:100%;
+  padding:14px;
+  border:0;
+  border-radius:9px;
+  background:#7c3aed;
+  color:white;
+  font-size:15px;
+  font-weight:bold;
+  text-align:center;
+  text-decoration:none;
+  margin-top:12px;
+  cursor:pointer;
+}
+button:hover,.button:hover{background:#6d28d9}
+.payment{
+  display:none;
+  margin:30px 0;
+  padding:22px;
+  background:#151d32;
+  border:1px solid #293653;
+  border-radius:16px;
+  text-align:center;
+}
+.payment img{
+  display:block;
+  width:100%;
+  max-width:300px;
+  margin:20px auto;
+  border-radius:12px;
+  background:#fff;
+}
+.payment p{color:#d0d7e6;line-height:1.7}
+.notice{
+  font-size:13px;
+  color:#f5d28b;
+  line-height:1.6;
+}
+footer{
+  text-align:center;
+  padding:30px 15px;
+  color:#9ca9c2;
+  font-size:13px;
+  line-height:1.7;
+}
+</style>
 </head>
 
 <body>
-  <header>TRADE <span>&</span> STUDY</header>
 
-  <section class="hero">
-    <div class="tag">YOUR TRADING LIBRARY</div>
-    <h1>Trade Smarter.<br>Learn Better.</h1>
-    <p>
-      Explore trading concepts through easy-to-understand
-      Hinglish PDF guides. Learn at your own pace.
-    </p>
-  </section>
+<header>TRADE <span>&</span> STUDY</header>
 
-  <main>
-    <h2 class="section-title">Premium Trading PDFs</h2>
-    <p class="subtitle">
-      Digital educational guides · 25+ pages each
-    </p>
+<section class="hero">
+  <div class="tag">YOUR TRADING LIBRARY</div>
+  <h1>Trade Smarter.</h1>
+  <p>Explore trading concepts through easy-to-understand Hinglish PDFs.<br>
+  Learn at your own pace.</p>
+</section>
 
-    <div class="products">
-      <article class="card">
-        <div class="cover">📊<small>ICT & SMC</small></div>
-        <h2>ICT & Smart Money Concepts</h2>
-        <p class="description">
-          Explore ICT and Smart Money Concepts with a
-          beginner-friendly guide written in simple Hinglish.
-        </p>
-        <p class="details">25+ pages · Hinglish PDF</p>
-        <div class="price">₹199</div>
-        <a class="buy" href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener noreferrer">Buy Now ↗</a>
-      </article>
+<main>
+<h2>Premium Trading PDFs</h2>
+<p style="color:#b8c2d8">Digital educational guides · 25+ pages each</p>
 
-      <article class="card">
-        <div class="cover">🎯<small>SUPPORT / RESISTANCE</small></div>
-        <h2>Support & Resistance Mastery</h2>
-        <p class="description">
-          Learn the basics of support and resistance,
-          key price levels, and chart-study concepts.
-        </p>
-        <p class="details">25+ pages · Hinglish PDF</p>
-        <div class="price">₹199</div>
-        <a class="buy" href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener noreferrer">Buy Now ↗</a>
-      </article>
+<div class="products">
 
-      <article class="card">
-        <div class="cover">🚀<small>BREAKOUT</small></div>
-        <h2>Breakout & Fakeout Strategy Guide</h2>
-        <p class="description">
-          Explore breakout and false-breakout concepts
-          and how traders study price movements.
-        </p>
-        <p class="details">25+ pages · Hinglish PDF</p>
-        <div class="price">₹199</div>
-        <a class="buy" href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener noreferrer">Buy Now ↗</a>
-      </article>
+<article class="card">
+  <div class="cover">📈 ICT & SMC</div>
+  <h3>ICT & Smart Money Concepts</h3>
+  <p>Explore ICT and Smart Money trading concepts in easy Hinglish.</p>
+  <div class="details">25+ pages · Hinglish PDF</div>
+  <div class="price">₹199</div>
+  <button onclick="buy('ICT & Smart Money Concepts')">Buy Now</button>
+</article>
 
-      <article class="card">
-        <div class="cover">🧩<small>BLOCKS</small></div>
-        <h2>Master Breaker & Rejection Blocks</h2>
-        <p class="description">
-          Explore breaker blocks and rejection blocks
-          with an introduction to these chart-analysis concepts.
-        </p>
-        <p class="details">25+ pages · Hinglish PDF</p>
-        <div class="price">₹199</div>
-        <a class="buy" href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener noreferrer">Buy Now ↗</a>
-      </article>
-    </div>
+<article class="card">
+  <div class="cover">🎯 SUPPORT / RESISTANCE</div>
+  <h3>Support & Resistance Mastery</h3>
+  <p>Learn about support, resistance and important price levels.</p>
+  <div class="details">25+ pages · Hinglish PDF</div>
+  <div class="price">₹199</div>
+  <button onclick="buy('Support & Resistance Mastery')">Buy Now</button>
+</article>
 
-    <div class="note">
-      <strong>Order information:</strong> Buy Now opens our
-      order form. Submit your details and payment reference.
-      Orders are reviewed manually; verified orders will be
-      delivered by email. Please wait for confirmation.
-      <br><br>
-      <strong>Risk disclaimer:</strong> This material is for
-      educational purposes only, not financial advice.
-      Trading involves risk, and losses are possible.
-    </div>
-  </main>
+<article class="card">
+  <div class="cover">🚀 BREAKOUT</div>
+  <h3>Breakout & Fakeout Strategy Guide</h3>
+  <p>Study breakout and false-breakout concepts in price movements.</p>
+  <div class="details">25+ pages · Hinglish PDF</div>
+  <div class="price">₹199</div>
+  <button onclick="buy('Breakout & Fakeout Strategy Guide')">Buy Now</button>
+</article>
 
-  <footer>
-    TRADE & STUDY<br>
-    Educational content only. Trading involves financial risk.<br>
-    © 2026 Trade & Study
-  </footer>
+<article class="card">
+  <div class="cover">🧩 BLOCKS</div>
+  <h3>Master Breaker & Rejection Blocks</h3>
+  <p>Explore breaker and rejection block concepts in chart analysis.</p>
+  <div class="details">25+ pages · Hinglish PDF</div>
+  <div class="price">₹199</div>
+  <button onclick="buy('Master Breaker & Rejection Blocks')">Buy Now</button>
+</article>
+
+</div>
+
+<section class="payment" id="payment">
+  <h2>Complete Your Payment</h2>
+  <p id="selectedProduct"></p>
+  <div class="price">₹199</div>
+
+  <p>Scan this QR code using your UPI app. Check the recipient name before paying.</p>
+
+  <img
+    src="Picsart_26-10-30_01-28-16-907.jpg"
+    alt="FamApp payment QR code"
+  >
+
+  <p class="notice">
+    Pay only if your payment app confirms the correct recipient and amount.
+    Keep your transaction reference for the order form.
+  </p>
+
+  <a class="button"
+     href="https://forms.gle/4fMuhS5LZpMghwF26"
+     target="_blank"
+     rel="noopener">
+     Continue to Order Form
+  </a>
+
+  <p class="notice">
+    Submit your order after payment. Orders are checked manually.
+    A screenshot alone does not confirm payment.
+  </p>
+</section>
+
+<p class="notice">
+  Educational content only. Trading involves financial risk.
+  No profits or financial outcomes are guaranteed.
+</p>
+</main>
+
+<footer>
+  TRADE & STUDY<br>
+  Educational products · Learn responsibly<br>
+  © 2026 Trade & Study
+</footer>
+
+<script>
+function buy(product){
+  document.getElementById("selectedProduct").textContent =
+    "Selected PDF: " + product;
+  document.getElementById("payment").style.display = "block";
+  document.getElementById("payment").scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+</script>
+
 </body>
 </html>
