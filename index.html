@@ -2,300 +2,1040 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trade & Study | Premium Trading PDFs</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
-body.modal-open{overflow:hidden}
-header{padding:22px;border-bottom:1px solid #26314a;font-size:21px;font-weight:bold}
-header span,.accent{color:#78b7fa}
-.hero{text-align:center;padding:45px 20px 30px}
-.tag{color:#78b7fa;font-size:12px;letter-spacing:2px}
-h1{font-size:36px;margin:12px 0}
-.hero p,.muted{color:#b8c2d8;line-height:1.7}
-main{max-width:950px;margin:auto;padding:20px}
-h2{margin-top:0}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
-.card,.panel{background:#151d32;border:1px solid #293653;border-radius:16px;padding:21px}
-.card{display:flex;flex-direction:column}
-.cover{background:linear-gradient(135deg,#223044,#17415b);padding:25px 10px;text-align:center;border-radius:10px;font-size:22px;margin-bottom:16px}
-.card h3{line-height:1.4}
-.card p{color:#b8c2d8;font-size:14px;line-height:1.6}
-.details{color:#78b7fa;font-size:13px}
-.price{font-size:27px;font-weight:bold;margin:16px 0}
-button,.btn{display:block;width:100%;padding:14px;border:0;border-radius:9px;background:#7c3aed;color:#fff;font-size:15px;font-weight:bold;text-align:center;text-decoration:none;margin-top:12px;cursor:pointer}
-button:hover,.btn:hover{background:#6d28d9}
-.secondary{background:transparent;border:1px solid #78b7fa;color:#78b7fa}
-.secondary:hover{background:#202d47}
-.card .price{margin-top:auto;padding-top:14px}
-.trust{margin:28px 0}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}
-.step{background:#10182b;border:1px solid #293653;border-radius:12px;padding:16px;line-height:1.6}
-.step p{color:#b8c2d8;font-size:14px}
-.payment{display:none;margin:28px 0;padding:22px;background:#151d32;border:1px solid #293653;border-radius:16px;text-align:center;scroll-margin-top:15px}
-.payment img{display:block;width:100%;max-width:300px;margin:20px auto;border-radius:12px;background:#fff}
-.note{color:#f5d28b;font-size:13px;line-height:1.7}
-footer{text-align:center;padding:30px 15px;color:#9ca9c2;font-size:13px;line-height:1.8}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b09">
 
-/* Product details popup */
-.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(3,7,18,.88);padding:18px;overflow-y:auto}
-.modal.show{display:flex;align-items:flex-start;justify-content:center}
-.modal-box{position:relative;background:#151d32;border:1px solid #344462;border-radius:18px;padding:25px;width:100%;max-width:580px;margin:auto}
-.modal-tag{color:#78b7fa;font-size:12px;letter-spacing:2px}
-.modal-box h2{line-height:1.4;margin:12px 0}
-.hook{color:#f5d28b;font-size:17px;line-height:1.7;font-weight:bold}
-.modal-box p,.modal-box li{color:#c2cbe0;line-height:1.8;font-size:14px}
-.modal-box h3{font-size:16px;margin-top:24px}
-.modal-box ul{padding-left:22px}
-.close{position:absolute;right:15px;top:12px;width:40px;height:40px;margin:0;background:#26314a;font-size:23px}
-.modal-price{color:#fff;font-size:25px;font-weight:bold;margin-top:20px}
-@media(max-width:480px){
- h1{font-size:30px}
- .hero{padding-top:35px}
- main{padding:15px}
- .modal{padding:10px}
- .modal-box{padding:22px 18px}
+  <title>Trade & Study | The Art of Trading</title>
+  <meta name="description" content="Explore educational trading guides on ICT, Smart Money Concepts, Support and Resistance, Breakouts, and market structure.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b0b09;
+      --panel: #13130f;
+      --panel-light: #191911;
+      --gold: #c6a866;
+      --gold-light: #e4cf98;
+      --ivory: #f4efe3;
+      --muted: #aaa696;
+      --border: rgba(198,168,102,.23);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ivory);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button:focus-visible, a:focus-visible {
+      outline: 2px solid var(--gold-light);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    .gold {
+      color: var(--gold);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .section {
+      padding: 88px 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 650px;
+      margin: 0 auto 42px;
+    }
+
+    .section-heading h2 {
+      font: 600 clamp(36px, 5vw, 52px)/1.1 "Cormorant Garamond", serif;
+      margin: 12px 0;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,11,9,.94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      font: 700 27px/1 "Cormorant Garamond", serif;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-light);
+    }
+
+    .nav-cta {
+      padding: 10px 16px;
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--border);
+      padding: 7px 11px;
+      font-size: 20px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 610px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+      background:
+        radial-gradient(ellipse at 78% 45%, rgba(153,119,48,.13), transparent 42%),
+        linear-gradient(120deg, #0b0b09 40%, #15140e 100%);
+    }
+
+    .hero::after {
+      content: "T&S";
+      position: absolute;
+      right: -20px;
+      bottom: -115px;
+      font: 700 clamp(230px, 35vw, 440px)/1 "Cormorant Garamond", serif;
+      color: rgba(198,168,102,.045);
+      pointer-events: none;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 90px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font: 600 clamp(54px, 9vw, 92px)/.98 "Cormorant Garamond", serif;
+      letter-spacing: -1.5px;
+      margin: 22px 0;
+    }
+
+    .hero h1 span {
+      display: block;
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    .hero-description {
+      max-width: 500px;
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 30px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 46px;
+      padding: 12px 21px;
+      border: 1px solid var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .4px;
+      transition: .2s ease;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: #11100c;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+    }
+
+    .btn-outline {
+      color: var(--gold-light);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(198,168,102,.1);
+    }
+
+    .hero-note {
+      margin-top: 30px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: .5px;
+    }
+
+    /* TRUST STRIP */
+
+    .trust-strip {
+      border-bottom: 1px solid var(--border);
+      padding: 23px 0;
+    }
+
+    .trust-inner {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 15px 38px;
+      color: var(--muted);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .trust-inner span::before {
+      content: "✦";
+      color: var(--gold);
+      margin-right: 9px;
+    }
+
+    /* PRODUCTS */
+
+    .products-section {
+      background: #0e0e0b;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .product-card {
+      border: 1px solid var(--border);
+      background: linear-gradient(145deg, #171710, #10100d);
+      padding: 27px;
+      display: flex;
+      flex-direction: column;
+      min-height: 300px;
+      transition: border-color .25s, transform .25s;
+    }
+
+    .product-card:hover {
+      border-color: rgba(198,168,102,.7);
+      transform: translateY(-3px);
+    }
+
+    .product-number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+    }
+
+    .product-card h3 {
+      font: 600 32px/1.08 "Cormorant Garamond", serif;
+      margin: 22px 0 12px;
+    }
+
+    .product-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+
+    .product-bottom {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .price {
+      font: 700 27px "Cormorant Garamond", serif;
+      color: var(--gold-light);
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .small-btn {
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--ivory);
+      padding: 9px 12px;
+      font-size: 11px;
+    }
+
+    .small-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold-light);
+    }
+
+    .small-btn.buy {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: #11100c;
+      font-weight: 700;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      text-align: center;
+      font-size: 11px;
+      margin-top: 25px;
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-copy h2 {
+      font: 600 clamp(38px, 5vw, 54px)/1.04 "Cormorant Garamond", serif;
+      margin: 15px 0 20px;
+    }
+
+    .about-copy p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .quote-panel {
+      border: 1px solid var(--border);
+      padding: 40px;
+      background: linear-gradient(145deg, #1b1910, #11110d);
+    }
+
+    .quote-mark {
+      font: 70px/1 "Cormorant Garamond", serif;
+      color: var(--gold);
+    }
+
+    .quote-panel h3 {
+      font: 600 33px/1.12 "Cormorant Garamond", serif;
+      margin: 12px 0;
+    }
+
+    .quote-panel p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* ORDER STEPS */
+
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 17px;
+    }
+
+    .step-card {
+      border: 1px solid var(--border);
+      padding: 25px;
+      background: var(--panel);
+    }
+
+    .step-number {
+      color: var(--gold);
+      font: 600 35px "Cormorant Garamond", serif;
+    }
+
+    .step-card h3 {
+      font: 600 25px "Cormorant Garamond", serif;
+      margin: 10px 0;
+    }
+
+    .step-card p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .center-action {
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    /* FAQ */
+
+    .faq-list {
+      max-width: 760px;
+      margin: auto;
+    }
+
+    details {
+      padding: 19px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    summary {
+      cursor: pointer;
+      font: 600 23px "Cormorant Garamond", serif;
+      color: var(--ivory);
+    }
+
+    details p {
+      padding-top: 12px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* PAYMENT */
+
+    .payment-section {
+      display: none;
+      padding: 65px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: #15140e;
+    }
+
+    .payment-box {
+      max-width: 650px;
+      margin: auto;
+      padding: 30px;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .payment-box h2 {
+      font: 600 42px "Cormorant Garamond", serif;
+      margin: 10px 0;
+    }
+
+    .payment-box p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 10px 0;
+    }
+
+    .qr-image {
+      display: block;
+      width: min(260px, 100%);
+      height: auto;
+      object-fit: contain;
+      margin: 24px auto;
+      background: white;
+      padding: 10px;
+      border-radius: 3px;
+    }
+
+    .payment-warning {
+      font-size: 11px !important;
+      border: 1px solid var(--border);
+      padding: 12px;
+      margin: 20px 0 !important;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 38px 0 22px;
+      background: #080806;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 25px;
+      flex-wrap: wrap;
+      padding-bottom: 25px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 10px;
+      max-width: 300px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      align-items: center;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 10px;
+    }
+
+    /* MODAL */
+
+    .modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 300;
+      background: rgba(0,0,0,.83);
+      padding: 20px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-content {
+      width: min(520px, 100%);
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 30px;
+      background: #14140f;
+      border: 1px solid var(--gold);
+      position: relative;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      color: var(--gold);
+      background: transparent;
+      border: 0;
+      font-size: 26px;
+    }
+
+    .modal-content h2 {
+      font: 600 36px/1.1 "Cormorant Garamond", serif;
+      padding-right: 25px;
+      margin: 15px 0;
+    }
+
+    .modal-content p,
+    .modal-content li {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .modal-content ul {
+      padding-left: 20px;
+      margin: 15px 0 22px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        min-height: 68px;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-cta {
+        display: none;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        padding: 20px 5%;
+        background: #10100c;
+        border-bottom: 1px solid var(--border);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(198,168,102,.1);
+      }
+
+      .hero {
+        min-height: 520px;
+      }
+
+      .hero-content {
+        padding: 75px 0;
+      }
+
+      .section {
+        padding: 65px 0;
+      }
+
+      .product-grid,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        gap: 25px;
+      }
+
+      .steps-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-card {
+        padding: 23px;
+      }
+
+      .quote-panel {
+        padding: 28px;
+      }
+
+      .product-card h3 {
+        font-size: 30px;
+      }
+
+      .trust-inner {
+        gap: 12px 20px;
+      }
+
+      .payment-box {
+        padding: 22px 15px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="Trade and Study home">
+        TRADE <span>&</span> STUDY
+      </a>
+
+      <button class="menu-toggle" id="menuToggle"
+        aria-label="Toggle navigation" aria-expanded="false"
+        aria-controls="navLinks">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#products">Collection</a>
+        <a href="#about">Our Philosophy</a>
+        <a href="#how-to-order">How to Order</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <a class="nav-cta" href="#products">EXPLORE COLLECTION ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">A curated trading education collection</div>
+
+          <h1>
+            Trade with
+            <span>Knowledge.</span>
+          </h1>
+
+          <p class="hero-description">
+            Build your understanding of market structure, price action,
+            and trading concepts with focused digital learning guides.
+            Study the concepts. Practise the process. Make your own decisions.
+          </p>
+
+          <div class="button-row">
+            <a href="#products" class="btn btn-primary">EXPLORE THE COLLECTION ↗</a>
+            <a href="#about" class="btn btn-outline">OUR PHILOSOPHY</a>
+          </div>
+
+          <p class="hero-note">
+            EDUCATION FIRST &nbsp;·&nbsp; DIGITAL GUIDES &nbsp;·&nbsp; SELF-PACED LEARNING
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST STRIP -->
+    <section class="trust-strip" aria-label="Store features">
+      <div class="container trust-inner">
+        <span>Focused Learning</span>
+        <span>Digital PDF Guides</span>
+        <span>Simple Ordering</span>
+        <span>₹199 Per Guide</span>
+      </div>
+    </section>
+
+    <!-- COLLECTION -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b0b09">
+<title>Trade & Study | Premium Trading Guides</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#0b0b09;--panel:#15150f;--gold:#c6a866;--ivory:#f4efe3;--muted:#aaa696;--border:#393326}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--bg);color:var(--ivory);font-family:"DM Sans",sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+.container{width:90%;max-width:1100px;margin:auto}
+.gold{color:var(--gold)}
+nav{position:sticky;top:0;z-index:10;background:#0b0b09;border-bottom:1px solid var(--border)}
+.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:15px}
+.logo{font:700 27px "Cormorant Garamond",serif}
+.logo span{color:var(--gold)}
+.links{display:flex;gap:20px;font-size:12px;color:var(--muted)}
+.links a:hover{color:var(--gold)}
+.menu{display:none;background:none;color:var(--gold);border:1px solid var(--border);padding:6px 10px}
+.hero{padding:100px 0 90px;background:radial-gradient(ellipse at 80% 30%,#292213,transparent 50%)}
+.eyebrow{font-size:11px;color:var(--gold);letter-spacing:3px;text-transform:uppercase}
+h1,h2,h3{font-family:"Cormorant Garamond",serif}
+h1{font-size:clamp(55px,9vw,90px);line-height:1;margin:20px 0}
+.hero p,.muted{color:var(--muted)}
+.hero p{max-width:520px;margin-bottom:25px;font-size:14px}
+.btn{display:inline-block;padding:12px 18px;border:1px solid var(--gold);font-size:12px;font-weight:700;margin:5px 5px 5px 0}
+.primary{background:var(--gold);color:#111}
+.outline{color:var(--gold)}
+.strip{padding:18px 0;text-align:center;border-block:1px solid var(--border);color:var(--muted);font-size:11px;letter-spacing:1px}
+section.content{padding:75px 0}
+.dark{background:#10100d}
+.heading{text-align:center;margin-bottom:35px}
+.heading h2,.about h2{font-size:clamp(36px,5vw,50px);line-height:1.1;margin:12px 0}
+.heading p{color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.card{padding:25px;background:linear-gradient(145deg,#191910,#10100d);border:1px solid var(--border);display:flex;flex-direction:column}
+.card:hover{border-color:var(--gold)}
+.number{font-size:11px;letter-spacing:2px;color:var(--gold)}
+.card h3{font-size:31px;line-height:1.1;margin:18px 0 12px}
+.card p{font-size:13px;color:var(--muted);margin-bottom:20px}
+.bottom{margin-top:auto;border-top:1px solid var(--border);padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.price{font:700 27px "Cormorant Garamond",serif;color:var(--gold)}
+.small{background:transparent;border:1px solid var(--border);color:var(--ivory);padding:9px;font-size:11px}
+.small.buy{background:var(--gold);color:#111;border-color:var(--gold)}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:center}
+.about p{color:var(--muted);font-size:14px;margin:15px 0}
+.quote{border:1px solid var(--border);padding:30px;background:var(--panel)}
+.quote h3{font-size:32px;line-height:1.15;margin:10px 0}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.step{border:1px solid var(--border);padding:22px;background:var(--panel)}
+.step strong{font:600 35px "Cormorant Garamond",serif;color:var(--gold)}
+.step h3{font-size:24px;margin:8px 0}
+.step p{font-size:12px;color:var(--muted)}
+.faq{max-width:750px;margin:auto}
+details{padding:18px 0;border-bottom:1px solid var(--border)}
+summary{font:600 23px "Cormorant Garamond",serif;cursor:pointer}
+details p{color:var(--muted);font-size:13px;padding-top:10px}
+#payment{display:none;background:#17160f;border-block:1px solid var(--border)}
+.paybox{max-width:600px;margin:auto;text-align:center;border:1px solid var(--border);padding:25px}
+.paybox h2{font-size:40px;margin:10px}
+.paybox p{font-size:13px;color:var(--muted);margin:12px 0}
+.qr{display:block;width:min(260px,100%);height:auto;margin:20px auto;background:white;padding:8px}
+footer{padding:35px 0 20px;background:#070706;border-top:1px solid var(--border)}
+.footer{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+footer p,footer a{font-size:12px;color:var(--muted)}
+footer p{max-width:330px;margin-top:8px}
+.footlinks{display:flex;gap:15px;flex-wrap:wrap}
+.copyright{border-top:1px solid var(--border);margin-top:25px;padding-top:15px}
+.modal{display:none;position:fixed;inset:0;background:#000d;z-index:20;padding:18px;align-items:center;justify-content:center}
+.modal.open{display:flex}
+.modalbox{position:relative;background:#15150f;border:1px solid var(--gold);padding:28px;width:min(500px,100%);max-height:85vh;overflow:auto}
+.close{position:absolute;right:12px;top:8px;background:none;border:0;color:var(--gold);font-size:27px}
+.modalbox h2{font-size:35px;margin:12px 0}
+.modalbox p,.modalbox li{color:var(--muted);font-size:13px}
+.modalbox ul{padding-left:20px;margin:15px 0}
+@media(max-width:700px){
+.menu{display:block}
+.links{display:none;position:absolute;top:69px;left:0;right:0;background:#10100d;padding:15px 5%;flex-direction:column;gap:0;border-bottom:1px solid var(--border)}
+.links.show{display:flex}
+.links a{padding:11px 0;border-bottom:1px solid #29251b}
+.grid,.about,.steps{grid-template-columns:1fr}
+.hero{padding:75px 0}
+section.content{padding:55px 0}
 }
 </style>
 </head>
+
 <body>
-
-<header>TRADE <span>&</span> STUDY</header>
-
-<section class="hero">
-<div class="tag">YOUR TRADING LIBRARY</div>
-<h1>Trade Smarter.</h1>
-<p>Explore trading concepts through easy-to-understand Hinglish PDFs.<br>
-Learn at your own pace.</p>
-</section>
+<nav>
+ <div class="container nav">
+  <a href="#home" class="logo">TRADE <span>&</span> STUDY</a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="links">☰</button>
+  <div class="links" id="links">
+   <a href="#home">Home</a><a href="#products">Collection</a>
+   <a href="#about">About</a><a href="#order">How to Order</a><a href="#faq">FAQ</a>
+  </div>
+ </div>
+</nav>
 
 <main>
-<h2>Premium Trading PDFs</h2>
-<p class="muted">Digital educational guides · 25+ pages each</p>
-
-<div class="products">
-
-<article class="card">
-<div class="cover">📈 ICT & SMC</div>
-<h3>ICT & Smart Money Concepts</h3>
-<p>Trading charts ko sirf dekhna nahi, unke peeche ke concepts ko samajhna seekho.</p>
-<div class="details">25+ pages · Hinglish PDF</div>
-<div class="price">₹199</div>
-<button class="secondary" onclick="showDetails('ict')">View Details</button>
-<button onclick="buy('ICT & Smart Money Concepts')">Buy Now · ₹199</button>
-</article>
-
-<article class="card">
-<div class="cover">🎯 SUPPORT / RESISTANCE</div>
-<h3>Support & Resistance Mastery</h3>
-<p>Price levels ko samajhne aur chart analysis ko structured banane ki direction mein seekho.</p>
-<div class="details">25+ pages · Hinglish PDF</div>
-<div class="price">₹199</div>
-<button class="secondary" onclick="showDetails('sr')">View Details</button>
-<button onclick="buy('Support & Resistance Mastery')">Buy Now · ₹199</button>
-</article>
-
-<article class="card">
-<div class="cover">🚀 BREAKOUT</div>
-<h3>Breakout & Fakeout Strategy Guide</h3>
-<p>Jab price kisi level ko break kare, toh breakout aur false breakout ke concepts explore karo.</p>
-<div class="details">25+ pages · Hinglish PDF</div>
-<div class="price">₹199</div>
-<button class="secondary" onclick="showDetails('breakout')">View Details</button>
-<button onclick="buy('Breakout & Fakeout Strategy Guide')">Buy Now · ₹199</button>
-</article>
-
-<article class="card">
-<div class="cover">🧩 BLOCKS</div>
-<h3>Master Breaker & Rejection Blocks</h3>
-<p>Price-action charts par breaker aur rejection block concepts ki understanding build karo.</p>
-<div class="details">25+ pages · Hinglish PDF</div>
-<div class="price">₹199</div>
-<button class="secondary" onclick="showDetails('blocks')">View Details</button>
-<button onclick="buy('Master Breaker & Rejection Blocks')">Buy Now · ₹199</button>
-</article>
-
-</div>
-
-<!-- Product details popup -->
-<section class="modal" id="detailsModal"
-role="dialog" aria-modal="true" aria-labelledby="detailTitle"
-onclick="if(event.target===this)closeDetails()">
-<div class="modal-box">
-<button class="close" onclick="closeDetails()" aria-label="Close details">×</button>
-<div class="modal-tag">TRADE & STUDY · PRODUCT GUIDE</div>
-<h2 id="detailTitle"></h2>
-<div class="hook" id="detailHook"></div>
-<p id="detailDescription"></p>
-<h3>What you'll explore</h3>
-<ul id="detailTopics"></ul>
-<p id="detailAudience"></p>
-<p class="note">Educational content only. Trading involves risk. No profit or financial outcome is guaranteed.</p>
-<div class="modal-price">₹199</div>
-<button id="detailBuyButton" onclick="buyFromDetails()">Buy Now · ₹199</button>
-<button class="secondary" onclick="closeDetails()">Back to Products</button>
-</div>
+<section class="hero" id="home">
+ <div class="container">
+  <div class="eyebrow">A curated trading education collection</div>
+  <h1>Trade with<br><span class="gold">Knowledge.</span></h1>
+  <p>Explore focused digital guides on market structure, price action and trading concepts. Study the concepts, practise the process, and make your own decisions.</p>
+  <a class="btn primary" href="#products">EXPLORE COLLECTION ↗</a>
+  <a class="btn outline" href="#about">OUR PHILOSOPHY</a>
+ </div>
 </section>
 
-<section class="trust">
-<h2>Simple & Transparent Ordering</h2>
-<p class="muted">Know the process before you pay.</p>
-<div class="steps">
-<div class="step">
-<strong>① Pay ₹199</strong>
-<p>Scan the QR below using your UPI app. Check the recipient name and amount before paying.</p>
-</div>
-<div class="step">
-<strong>② Submit the Form</strong>
-<p>After payment, enter your email, select your PDF and provide the transaction reference.</p>
-</div>
-<div class="step">
-<strong>③ Manual Verification</strong>
-<p>Each order is checked against the actual payment record before delivery.</p>
-</div>
-<div class="step">
-<strong>④ PDF by Email</strong>
-<p>After successful verification, your selected PDF will be emailed within 24 hours.</p>
-</div>
-<div class="step">
-<strong>⑤ Clear Product Details</strong>
-<p>Review each PDF's description before buying. Purchase only if the topic suits your needs.</p>
-</div>
-<div class="step">
-<strong>🔒 Honest Process</strong>
-<p>No fake testimonials or guaranteed-profit claims. Contact the seller if your verified order is delayed.</p>
-</div>
-</div>
+<div class="strip">DIGITAL PDF GUIDES &nbsp; ✦ &nbsp; SELF-PACED LEARNING &nbsp; ✦ &nbsp; ₹199 PER GUIDE</div>
+
+<section class="content dark" id="products">
+ <div class="container">
+  <div class="heading">
+   <div class="eyebrow">The Collection</div>
+   <h2>Knowledge worth <span class="gold">studying.</span></h2>
+   <p>Choose a guide to explore its details and ordering process.</p>
+  </div>
+
+  <div class="grid">
+   <article class="card">
+    <div class="number">COLLECTION NO. 01</div>
+    <h3>ICT & Smart Money Concepts</h3>
+    <p>An educational guide to ICT and Smart Money Concepts for self-paced study.</p>
+    <div class="bottom"><span class="price">₹199</span><div><button class="small" onclick="details(0)">View Details</button> <button class="small buy" onclick="buy(0)">Buy Now ↗</button></div></div>
+   </article>
+   <article class="card">
+    <div class="number">COLLECTION NO. 02</div>
+    <h3>Support & Resistance Mastery</h3>
+    <p>Study support and resistance concepts and understand price levels.</p>
+    <div class="bottom"><span class="price">₹199</span><div><button class="small" onclick="details(1)">View Details</button> <button class="small buy" onclick="buy(1)">Buy Now ↗</button></div></div>
+   </article>
+   <article class="card">
+    <div class="number">COLLECTION NO. 03</div>
+    <h3>Breakout & Fakeout Strategy Guide</h3>
+    <p>Explore breakout and fakeout concepts to analyse price movement carefully.</p>
+    <div class="bottom"><span class="price">₹199</span><div><button class="small" onclick="details(2)">View Details</button> <button class="small buy" onclick="buy(2)">Buy Now ↗</button></div></div>
+   </article>
+   <article class="card">
+    <div class="number">COLLECTION NO. 04</div>
+    <h3>Master Breaker & Rejection Blocks</h3>
+    <p>A focused guide to breaker and rejection block concepts.</p>
+    <div class="bottom"><span class="price">₹199</span><div><button class="small" onclick="details(3)">View Details</button> <button class="small buy" onclick="buy(3)">Buy Now ↗</button></div></div>
+   </article>
+  </div>
+  <p class="muted" style="text-align:center;font-size:11px;margin-top:22px">Educational material only. Trading involves risk. No guide guarantees profits.</p>
+ </div>
 </section>
 
-<section class="payment" id="payment">
-<h2>Complete Your Payment</h2>
-<p id="selectedProduct" class="muted"></p>
-<div class="price">₹199</div>
-<p class="muted">Scan the QR code with your UPI app.</p>
-
-<img src="Picsart_26-10-30_01-28-16-907.jpg"
-alt="FamApp payment QR code">
-
-<p class="note">Before paying, verify that your payment app shows the correct recipient and amount. Do not pay if the details do not match.</p>
-
-<a class="btn" href="https://forms.gle/4fMuhS5LZpMghwF26"
-target="_blank" rel="noopener">Continue to Order Form</a>
-
-<p class="muted">After payment, submit your transaction reference and payment proof in the form. Payment is verified manually; a screenshot alone is not confirmation.</p>
+<section class="content" id="about">
+ <div class="container about">
+  <div>
+   <div class="eyebrow">Our Philosophy</div>
+   <h2>Less noise.<br><span class="gold">More understanding.</span></h2>
+   <p>Trade & Study brings together focused digital guides covering different areas of trading education.</p>
+   <p>Study at your own pace, practise with historical charts and build your understanding without relying on promises or shortcuts.</p>
+   <a class="btn outline" href="#products">BROWSE GUIDES ↗</a>
+  </div>
+  <div class="quote">
+   <div class="gold" style="font:70px Georgia">“</div>
+   <h3>Knowledge is the beginning. Practice builds understanding.</h3>
+   <p class="muted">Learn at your own pace. Question what you study. Make decisions responsibly.</p>
+  </div>
+ </div>
 </section>
 
-<p class="note">Educational content only. Trading involves financial risk. No profits or financial outcomes are guaranteed.</p>
+<section class="content dark" id="order">
+ <div class="container">
+  <div class="heading"><div class="eyebrow">Simple Process</div><h2>How to <span class="gold">order.</span></h2></div>
+  <div class="steps">
+   <div class="step"><strong>01</strong><h3>Choose</h3><p>Select a guide and review its details.</p></div>
+   <div class="step"><strong>02</strong><h3>Pay</h3><p>Scan the QR code and verify the recipient and amount before paying.</p></div>
+   <div class="step"><strong>03</strong><h3>Submit</h3><p>Complete the order form. Payment and orders are verified manually.</p></div>
+  </div>
+  <p style="text-align:center;margin-top:25px"><a href="#products" class="btn primary">CHOOSE A GUIDE ↗</a></p>
+ </div>
+</section>
+
+<section class="content" id="faq">
+ <div class="container">
+  <div class="heading"><div class="eyebrow">Good to Know</div><h2>Frequently asked <span class="gold">questions.</span></h2></div>
+  <div class="faq">
+   <details><summary>How much does each PDF cost?</summary><p>Each listed guide costs ₹199.</p></details>
+   <details><summary>How do I place an order?</summary><p>Choose Buy Now, follow the payment instructions, and complete the linked Google Form.</p></details>
+   <details><summary>When will I receive my PDF?</summary><p>The stated delivery target is within 24 hours after payment and order details have been verified. Contact the seller if your order is delayed.</p></details>
+   <details><summary>Are profits guaranteed?</summary><p>No. These guides are educational material, not financial advice. Trading involves risk and results are never guaranteed.</p></details>
+  </div>
+ </div>
+</section>
+
+<section class="content" id="payment">
+ <div class="container paybox">
+  <div class="eyebrow">Complete Your Order</div>
+  <h2><span class="gold">Payment</span> Details</h2>
+  <p id="selected">Selected guide</p>
+  <div class="price">₹199</div>
+  <p>Scan the QR code using a supported payment app.</p>
+  <img class="qr" src="Picsart_26-10-30_01-28-16-907.jpg" alt="Payment QR code" onerror="this.style.display='none';document.getElementById('qrerror').style.display='block'">
+  <p id="qrerror" style="display:none">QR image not found. Check the image filename in your GitHub repository.</p>
+  <p>Verify the recipient name and amount in your payment app. Submit the form after paying. Orders are checked manually.</p>
+  <a class="btn primary" href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener noreferrer">CONTINUE TO ORDER FORM ↗</a>
+  <p><button class="small" onclick="document.getElementById('payment').style.display='none';document.getElementById('products').scrollIntoView()">← Back to Collection</button></p>
+ </div>
+</section>
 </main>
 
 <footer>
-TRADE & STUDY<br>
-Digital educational products · Learn responsibly<br>
-© 2026 Trade & Study
+ <div class="container">
+  <div class="footer">
+   <div><a class="logo" href="#home">TRADE <span>&</span> STUDY</a><p>A curated collection of digital trading education guides. Learn responsibly and make informed decisions.</p></div>
+   <div class="footlinks"><a href="#home">Home</a><a href="#products">Collection</a><a href="#about">About</a><a href="#order">How to Order</a><a href="#faq">FAQ</a><a href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener noreferrer">Order Form ↗</a></div>
+  </div>
+  <p class="copyright">© <span id="year"></span> Trade & Study. Educational content only. Trading involves risk.</p>
+ </div>
 </footer>
 
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeDetails()">
+ <div class="modalbox">
+  <button class="close" onclick="closeDetails()" aria-label="Close">×</button>
+  <div class="eyebrow" id="modalNo">COLLECTION</div>
+  <h2 id="modalTitle"></h2>
+  <p id="modalDesc"></p>
+  <ul id="modalList"></ul>
+  <div class="price">₹199</div>
+  <p>Digital educational guide. Review the details before purchasing.</p>
+  <button class="btn primary" id="modalBuy">BUY THIS GUIDE ↗</button>
+ </div>
+</div>
+
 <script>
-const productDetails = {
- ict: {
-  title:"ICT & Smart Money Concepts",
-  hook:"“Chart par price dikh raha hai… par uske peeche ki story samajh aa rahi hai?”",
-  description:"ICT aur Smart Money Concepts ko easy-to-understand Hinglish mein explore karo. Trading charts ko analyse karne ki understanding build karne ke liye ek focused learning guide.",
-  topics:[
-   "ICT aur Smart Money Concepts ki introduction",
-   "Market structure se related concepts",
-   "Liquidity aur price behaviour ki basic understanding",
-   "Charts par concepts ko interpret karne ka approach"
-  ],
-  audience:"Un learners ke liye jo ICT aur Smart Money Concepts ki understanding develop karna chahte hain."
- },
- sr: {
-  title:"Support & Resistance Mastery",
-  hook:"“Har price level important nahi hota… toh chart par kis level par focus karein?”",
-  description:"Support aur Resistance concepts ko samajhne aur price levels ko structured tareeke se analyse karne ki direction mein apni learning build karo.",
-  topics:[
-   "Support aur Resistance ka basic concept",
-   "Important price levels ko samajhna",
-   "Price reactions ko analyse karne ki introduction",
-   "Chart reading ko systematic banane ka approach"
-  ],
-  audience:"Beginners aur un learners ke liye jo price levels aur chart analysis ki understanding improve karna chahte hain."
- },
- breakout: {
-  title:"Breakout & Fakeout Strategy Guide",
-  hook:"“Price level ke paar chala gaya… lekin kya woh move sustain bhi karega?”",
-  description:"Breakout aur Fakeout ke concepts explore karo aur samjho ki price-level breaks ko analyse karte waqt structured observation kyun important hai.",
-  topics:[
-   "Breakout concept ki introduction",
-   "Fakeout ya false breakout ko samajhna",
-   "Price movement aur key levels ka relation",
-   "Breakout situations ko analyse karne ka approach"
-  ],
-  audience:"Un learners ke liye jo breakout aur false-breakout concepts ko better understand karna chahte hain."
- },
- blocks: {
-  title:"Master Breaker & Rejection Blocks",
-  hook:"“Price kisi zone se react kare, toh us reaction ko kaise interpret karoge?”",
-  description:"Breaker aur Rejection Blocks jaise price-action concepts ko Hinglish mein explore karo aur charts ko samajhne ke liye apni conceptual foundation build karo.",
-  topics:[
-   "Breaker Blocks ki introduction",
-   "Rejection Blocks ki introduction",
-   "Price zones aur reactions ko samajhna",
-   "Chart analysis mein in concepts ki interpretation"
-  ],
-  audience:"Un learners ke liye jo price-action concepts aur chart zones ke baare mein seekhna chahte hain."
- }
-};
-
-let selectedDetail = null;
-
-function showDetails(id){
- const product = productDetails[id];
- if(!product) return;
-
- selectedDetail = id;
- document.getElementById("detailTitle").textContent = product.title;
- document.getElementById("detailHook").textContent = product.hook;
- document.getElementById("detailDescription").textContent = product.description;
- document.getElementById("detailAudience").textContent = product.audience;
-
- const list = document.getElementById("detailTopics");
- list.replaceChildren();
-
- product.topics.forEach(function(topic){
-  const item = document.createElement("li");
-  item.textContent = topic;
-  list.appendChild(item);
- });
-
- document.getElementById("detailsModal").classList.add("show");
- document.body.classList.add("modal-open");
+const products=[
+ {name:"ICT & Smart Money Concepts",desc:"An educational guide to ICT and Smart Money Concepts.",topics:["Study the concepts included in the PDF","Review the material at your own pace","Practise independently using charts"]},
+ {name:"Support & Resistance Mastery",desc:"An educational guide focused on support and resistance.",topics:["Review support and resistance ideas","Study the examples in the guide","Practise chart analysis"]},
+ {name:"Breakout & Fakeout Strategy Guide",desc:"A guide to breakout and fakeout concepts.",topics:["Study breakout concepts","Explore fakeout concepts","Practise with historical charts"]},
+ {name:"Master Breaker & Rejection Blocks",desc:"A guide to breaker and rejection block concepts.",topics:["Review the concepts covered in the PDF","Study the examples included","Practise your understanding"]}
+];
+function details(i){
+ const p=products[i];if(!p)return;
+ document.getElementById("modalNo").textContent="COLLECTION NO. "+String(i+1).padStart(2,"0");
+ document.getElementById("modalTitle").textContent=p.name;
+ document.getElementById("modalDesc").textContent=p.desc;
+ const list=document.getElementById("modalList");list.replaceChildren();
+ p.topics.forEach(t=>{const li=document.createElement("li");li.textContent=t;list.appendChild(li)});
+ document.getElementById("modalBuy").onclick=()=>{closeDetails();buy(i)};
+ document.getElementById("modal").classList.add("open");
+ document.body.style.overflow="hidden";
 }
-
-function closeDetails(){
- document.getElementById("detailsModal").classList.remove("show");
- document.body.classList.remove("modal-open");
+function closeDetails(){document.getElementById("modal").classList.remove("open");document.body.style.overflow=""}
+function buy(i){
+ document.getElementById("selected").textContent="Selected: "+products[i].name;
+ const p=document.getElementById("payment");p.style.display="block";p.scrollIntoView({behavior:"smooth"});
 }
-
-function buyFromDetails(){
- if(!selectedDetail) return;
- buy(productDetails[selectedDetail].title);
-}
-
-function buy(product){
- closeDetails();
- document.getElementById("selectedProduct").textContent =
-  "Selected PDF: " + product;
-
- const section = document.getElementById("payment");
- section.style.display = "block";
- section.scrollIntoView({behavior:"smooth",block:"start"});
-}
-
-document.addEventListener("keydown",function(event){
- if(event.key === "Escape") closeDetails();
-});
+const menu=document.getElementById("menu"),links=document.getElementById("links");
+menu.onclick=()=>{const open=links.classList.toggle("show");menu.setAttribute("aria-expanded",String(open));menu.textContent=open?"×":"☰"};
+links.querySelectorAll("a").forEach(a=>a.onclick=()=>{links.classList.remove("show");menu.setAttribute("aria-expanded","false");menu.textContent="☰"});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeDetails()});
+document.getElementById("year").textContent=new Date().getFullYear();
 </script>
 </body>
 </html>
