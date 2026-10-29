@@ -8,6 +8,7 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#0b1020;color:#fff;font-family:Arial,sans-serif}
+body.modal-open{overflow:hidden}
 header{padding:22px;border-bottom:1px solid #26314a;font-size:21px;font-weight:bold}
 header span,.accent{color:#78b7fa}
 .hero{text-align:center;padding:45px 20px 30px}
@@ -18,6 +19,7 @@ main{max-width:950px;margin:auto;padding:20px}
 h2{margin-top:0}
 .products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
 .card,.panel{background:#151d32;border:1px solid #293653;border-radius:16px;padding:21px}
+.card{display:flex;flex-direction:column}
 .cover{background:linear-gradient(135deg,#223044,#17415b);padding:25px 10px;text-align:center;border-radius:10px;font-size:22px;margin-bottom:16px}
 .card h3{line-height:1.4}
 .card p{color:#b8c2d8;font-size:14px;line-height:1.6}
@@ -25,6 +27,9 @@ h2{margin-top:0}
 .price{font-size:27px;font-weight:bold;margin:16px 0}
 button,.btn{display:block;width:100%;padding:14px;border:0;border-radius:9px;background:#7c3aed;color:#fff;font-size:15px;font-weight:bold;text-align:center;text-decoration:none;margin-top:12px;cursor:pointer}
 button:hover,.btn:hover{background:#6d28d9}
+.secondary{background:transparent;border:1px solid #78b7fa;color:#78b7fa}
+.secondary:hover{background:#202d47}
+.card .price{margin-top:auto;padding-top:14px}
 .trust{margin:28px 0}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:13px}
 .step{background:#10182b;border:1px solid #293653;border-radius:12px;padding:16px;line-height:1.6}
@@ -33,6 +38,26 @@ button:hover,.btn:hover{background:#6d28d9}
 .payment img{display:block;width:100%;max-width:300px;margin:20px auto;border-radius:12px;background:#fff}
 .note{color:#f5d28b;font-size:13px;line-height:1.7}
 footer{text-align:center;padding:30px 15px;color:#9ca9c2;font-size:13px;line-height:1.8}
+
+/* Product details popup */
+.modal{display:none;position:fixed;inset:0;z-index:1000;background:rgba(3,7,18,.88);padding:18px;overflow-y:auto}
+.modal.show{display:flex;align-items:flex-start;justify-content:center}
+.modal-box{position:relative;background:#151d32;border:1px solid #344462;border-radius:18px;padding:25px;width:100%;max-width:580px;margin:auto}
+.modal-tag{color:#78b7fa;font-size:12px;letter-spacing:2px}
+.modal-box h2{line-height:1.4;margin:12px 0}
+.hook{color:#f5d28b;font-size:17px;line-height:1.7;font-weight:bold}
+.modal-box p,.modal-box li{color:#c2cbe0;line-height:1.8;font-size:14px}
+.modal-box h3{font-size:16px;margin-top:24px}
+.modal-box ul{padding-left:22px}
+.close{position:absolute;right:15px;top:12px;width:40px;height:40px;margin:0;background:#26314a;font-size:23px}
+.modal-price{color:#fff;font-size:25px;font-weight:bold;margin-top:20px}
+@media(max-width:480px){
+ h1{font-size:30px}
+ .hero{padding-top:35px}
+ main{padding:15px}
+ .modal{padding:10px}
+ .modal-box{padding:22px 18px}
+}
 </style>
 </head>
 <body>
@@ -51,42 +76,68 @@ Learn at your own pace.</p>
 <p class="muted">Digital educational guides · 25+ pages each</p>
 
 <div class="products">
+
 <article class="card">
 <div class="cover">📈 ICT & SMC</div>
 <h3>ICT & Smart Money Concepts</h3>
-<p>A beginner-friendly Hinglish guide to ICT and Smart Money trading concepts.</p>
+<p>Trading charts ko sirf dekhna nahi, unke peeche ke concepts ko samajhna seekho.</p>
 <div class="details">25+ pages · Hinglish PDF</div>
 <div class="price">₹199</div>
-<button onclick="buy('ICT & Smart Money Concepts')">Buy Now</button>
+<button class="secondary" onclick="showDetails('ict')">View Details</button>
+<button onclick="buy('ICT & Smart Money Concepts')">Buy Now · ₹199</button>
 </article>
 
 <article class="card">
 <div class="cover">🎯 SUPPORT / RESISTANCE</div>
 <h3>Support & Resistance Mastery</h3>
-<p>Learn about support, resistance and important price levels on charts.</p>
+<p>Price levels ko samajhne aur chart analysis ko structured banane ki direction mein seekho.</p>
 <div class="details">25+ pages · Hinglish PDF</div>
 <div class="price">₹199</div>
-<button onclick="buy('Support & Resistance Mastery')">Buy Now</button>
+<button class="secondary" onclick="showDetails('sr')">View Details</button>
+<button onclick="buy('Support & Resistance Mastery')">Buy Now · ₹199</button>
 </article>
 
 <article class="card">
 <div class="cover">🚀 BREAKOUT</div>
 <h3>Breakout & Fakeout Strategy Guide</h3>
-<p>Explore breakout and false-breakout concepts in price movements.</p>
+<p>Jab price kisi level ko break kare, toh breakout aur false breakout ke concepts explore karo.</p>
 <div class="details">25+ pages · Hinglish PDF</div>
 <div class="price">₹199</div>
-<button onclick="buy('Breakout & Fakeout Strategy Guide')">Buy Now</button>
+<button class="secondary" onclick="showDetails('breakout')">View Details</button>
+<button onclick="buy('Breakout & Fakeout Strategy Guide')">Buy Now · ₹199</button>
 </article>
 
 <article class="card">
 <div class="cover">🧩 BLOCKS</div>
 <h3>Master Breaker & Rejection Blocks</h3>
-<p>A simple Hinglish introduction to breaker and rejection block concepts.</p>
+<p>Price-action charts par breaker aur rejection block concepts ki understanding build karo.</p>
 <div class="details">25+ pages · Hinglish PDF</div>
 <div class="price">₹199</div>
-<button onclick="buy('Master Breaker & Rejection Blocks')">Buy Now</button>
+<button class="secondary" onclick="showDetails('blocks')">View Details</button>
+<button onclick="buy('Master Breaker & Rejection Blocks')">Buy Now · ₹199</button>
 </article>
+
 </div>
+
+<!-- Product details popup -->
+<section class="modal" id="detailsModal"
+role="dialog" aria-modal="true" aria-labelledby="detailTitle"
+onclick="if(event.target===this)closeDetails()">
+<div class="modal-box">
+<button class="close" onclick="closeDetails()" aria-label="Close details">×</button>
+<div class="modal-tag">TRADE & STUDY · PRODUCT GUIDE</div>
+<h2 id="detailTitle"></h2>
+<div class="hook" id="detailHook"></div>
+<p id="detailDescription"></p>
+<h3>What you'll explore</h3>
+<ul id="detailTopics"></ul>
+<p id="detailAudience"></p>
+<p class="note">Educational content only. Trading involves risk. No profit or financial outcome is guaranteed.</p>
+<div class="modal-price">₹199</div>
+<button id="detailBuyButton" onclick="buyFromDetails()">Buy Now · ₹199</button>
+<button class="secondary" onclick="closeDetails()">Back to Products</button>
+</div>
+</section>
 
 <section class="trust">
 <h2>Simple & Transparent Ordering</h2>
@@ -146,12 +197,105 @@ Digital educational products · Learn responsibly<br>
 </footer>
 
 <script>
+const productDetails = {
+ ict: {
+  title:"ICT & Smart Money Concepts",
+  hook:"“Chart par price dikh raha hai… par uske peeche ki story samajh aa rahi hai?”",
+  description:"ICT aur Smart Money Concepts ko easy-to-understand Hinglish mein explore karo. Trading charts ko analyse karne ki understanding build karne ke liye ek focused learning guide.",
+  topics:[
+   "ICT aur Smart Money Concepts ki introduction",
+   "Market structure se related concepts",
+   "Liquidity aur price behaviour ki basic understanding",
+   "Charts par concepts ko interpret karne ka approach"
+  ],
+  audience:"Un learners ke liye jo ICT aur Smart Money Concepts ki understanding develop karna chahte hain."
+ },
+ sr: {
+  title:"Support & Resistance Mastery",
+  hook:"“Har price level important nahi hota… toh chart par kis level par focus karein?”",
+  description:"Support aur Resistance concepts ko samajhne aur price levels ko structured tareeke se analyse karne ki direction mein apni learning build karo.",
+  topics:[
+   "Support aur Resistance ka basic concept",
+   "Important price levels ko samajhna",
+   "Price reactions ko analyse karne ki introduction",
+   "Chart reading ko systematic banane ka approach"
+  ],
+  audience:"Beginners aur un learners ke liye jo price levels aur chart analysis ki understanding improve karna chahte hain."
+ },
+ breakout: {
+  title:"Breakout & Fakeout Strategy Guide",
+  hook:"“Price level ke paar chala gaya… lekin kya woh move sustain bhi karega?”",
+  description:"Breakout aur Fakeout ke concepts explore karo aur samjho ki price-level breaks ko analyse karte waqt structured observation kyun important hai.",
+  topics:[
+   "Breakout concept ki introduction",
+   "Fakeout ya false breakout ko samajhna",
+   "Price movement aur key levels ka relation",
+   "Breakout situations ko analyse karne ka approach"
+  ],
+  audience:"Un learners ke liye jo breakout aur false-breakout concepts ko better understand karna chahte hain."
+ },
+ blocks: {
+  title:"Master Breaker & Rejection Blocks",
+  hook:"“Price kisi zone se react kare, toh us reaction ko kaise interpret karoge?”",
+  description:"Breaker aur Rejection Blocks jaise price-action concepts ko Hinglish mein explore karo aur charts ko samajhne ke liye apni conceptual foundation build karo.",
+  topics:[
+   "Breaker Blocks ki introduction",
+   "Rejection Blocks ki introduction",
+   "Price zones aur reactions ko samajhna",
+   "Chart analysis mein in concepts ki interpretation"
+  ],
+  audience:"Un learners ke liye jo price-action concepts aur chart zones ke baare mein seekhna chahte hain."
+ }
+};
+
+let selectedDetail = null;
+
+function showDetails(id){
+ const product = productDetails[id];
+ if(!product) return;
+
+ selectedDetail = id;
+ document.getElementById("detailTitle").textContent = product.title;
+ document.getElementById("detailHook").textContent = product.hook;
+ document.getElementById("detailDescription").textContent = product.description;
+ document.getElementById("detailAudience").textContent = product.audience;
+
+ const list = document.getElementById("detailTopics");
+ list.replaceChildren();
+
+ product.topics.forEach(function(topic){
+  const item = document.createElement("li");
+  item.textContent = topic;
+  list.appendChild(item);
+ });
+
+ document.getElementById("detailsModal").classList.add("show");
+ document.body.classList.add("modal-open");
+}
+
+function closeDetails(){
+ document.getElementById("detailsModal").classList.remove("show");
+ document.body.classList.remove("modal-open");
+}
+
+function buyFromDetails(){
+ if(!selectedDetail) return;
+ buy(productDetails[selectedDetail].title);
+}
+
 function buy(product){
- document.getElementById("selectedProduct").textContent="Selected PDF: "+product;
- const section=document.getElementById("payment");
- section.style.display="block";
+ closeDetails();
+ document.getElementById("selectedProduct").textContent =
+  "Selected PDF: " + product;
+
+ const section = document.getElementById("payment");
+ section.style.display = "block";
  section.scrollIntoView({behavior:"smooth",block:"start"});
 }
+
+document.addEventListener("keydown",function(event){
+ if(event.key === "Escape") closeDetails();
+});
 </script>
 </body>
 </html>
