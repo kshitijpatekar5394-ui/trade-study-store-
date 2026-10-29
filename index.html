@@ -5,150 +5,201 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trade & Study | Premium Trading Guides</title>
-<meta name="description" content="Premium trading education PDFs in easy Hinglish. Explore trading concepts, price action and market structure.">
+<meta name="description" content="Premium trading education PDFs in Hinglish.">
 <style>
 :root {
-  --bg: #090909;
-  --panel: #12120f;
-  --gold: #c9a45c;
-  --gold-light: #ead4a0;
-  --text: #f4efe4;
-  --muted: #aaa395;
-  --line: #383021;
+  --bg:#090909;
+  --panel:#14130f;
+  --gold:#c9a45c;
+  --light:#ead6a2;
+  --text:#f4efe4;
+  --muted:#aaa395;
+  --line:#393021;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+* { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:90px; }
 body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: Arial, sans-serif;
-  line-height: 1.7;
+  background:var(--bg); color:var(--text);
+  font-family:Arial,sans-serif; line-height:1.7;
 }
-h1, h2, h3, .brand {
-  font-family: Georgia, "Times New Roman", serif;
-}
-a { color: inherit; text-decoration: none; }
-button { font: inherit; cursor: pointer; }
+a { color:inherit; text-decoration:none; }
+button { font:inherit; cursor:pointer; }
+h1,h2,h3,.brand { font-family:Georgia,"Times New Roman",serif; }
+
 header {
-  position: sticky; top: 0; z-index: 20;
-  background: rgba(9,9,9,.96);
-  border-bottom: 1px solid var(--line);
+  position:sticky; top:0; z-index:20;
+  background:rgba(9,9,9,.97);
+  border-bottom:1px solid var(--line);
 }
 .nav {
-  max-width: 1150px; margin: auto; padding: 17px 22px;
-  display: flex; justify-content: space-between;
-  align-items: center; gap: 18px;
+  max-width:1150px; margin:auto; padding:17px 22px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px;
 }
-.brand { color: var(--gold-light); font-size: 23px; letter-spacing: 1px; }
-.nav-links { display: flex; flex-wrap: wrap; gap: 22px; font-size: 13px; }
-.nav-links a:hover { color: var(--gold); }
+.brand {
+  color:var(--light); font-size:23px;
+  letter-spacing:1px; white-space:nowrap;
+}
+.nav-links { display:flex; align-items:center; gap:22px; font-size:13px; }
+.nav-links a:hover { color:var(--gold); }
+
+.menu-toggle {
+  display:none; width:44px; height:42px;
+  background:transparent; border:1px solid var(--gold);
+  border-radius:4px; padding:9px;
+}
+.menu-toggle span {
+  display:block; height:2px; margin:5px 0;
+  background:var(--gold); transition:.2s;
+}
+
 .hero {
-  min-height: 510px; padding: 90px 22px;
-  display: grid; place-items: center; text-align: center;
-  background: radial-gradient(ellipse at top, #292116 0%, #11100d 35%, #090909 75%);
-  border-bottom: 1px solid var(--line);
+  min-height:510px; padding:90px 22px;
+  display:grid; place-items:center; text-align:center;
+  background:radial-gradient(ellipse at top,#292116 0%,#11100d 35%,#090909 75%);
+  border-bottom:1px solid var(--line);
 }
-.hero-content { max-width: 780px; }
+.hero-content { max-width:780px; }
 .eyebrow {
-  color: var(--gold); letter-spacing: 4px;
-  text-transform: uppercase; font-size: 11px; margin-bottom: 20px;
+  color:var(--gold); letter-spacing:4px;
+  text-transform:uppercase; font-size:11px; margin-bottom:20px;
 }
-h1 { font-size: clamp(40px, 7vw, 76px); line-height: 1.1; font-weight: 500; }
-h1 em { color: var(--gold-light); font-weight: 400; }
-.hero p { color: var(--muted); max-width: 590px; margin: 24px auto 30px; }
-.actions { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; }
+h1 { font-size:clamp(40px,7vw,76px); line-height:1.1; font-weight:500; }
+h1 em { color:var(--light); }
+.hero p { color:var(--muted); max-width:590px; margin:24px auto 30px; }
+.actions { display:flex; justify-content:center; flex-wrap:wrap; gap:12px; }
+
 .btn {
-  display: inline-block; padding: 12px 21px;
-  border: 1px solid var(--gold); font-size: 12px;
-  letter-spacing: 1px; text-transform: uppercase;
-  transition: .2s;
+  display:inline-block; padding:12px 21px;
+  border:1px solid var(--gold); font-size:12px;
+  letter-spacing:1px; text-transform:uppercase;
+  transition:.2s; text-align:center;
 }
-.btn-primary { background: var(--gold); color: #100e09; font-weight: bold; }
-.btn:hover { background: var(--gold-light); color: #090909; }
-.btn-outline { color: var(--gold-light); background: transparent; }
-section { padding: 76px 22px; }
-.container { max-width: 1100px; margin: auto; }
-.section-head { text-align: center; margin-bottom: 38px; }
-.section-head h2 { font-size: clamp(30px, 5vw, 43px); font-weight: 400; }
-.section-head p { color: var(--muted); margin-top: 8px; }
-.gold-line { width: 55px; height: 1px; background: var(--gold); margin: 18px auto; }
+.btn-primary { background:var(--gold); color:#100e09; font-weight:bold; }
+.btn-outline { color:var(--light); background:transparent; }
+.btn:hover { background:var(--light); color:#090909; }
+
+section { padding:76px 22px; }
+.container { max-width:1100px; margin:auto; }
+.section-head { text-align:center; margin-bottom:38px; }
+.section-head h2 { font-size:clamp(30px,5vw,43px); font-weight:400; }
+.section-head p { color:var(--muted); margin-top:8px; }
+.gold-line { width:55px; height:1px; background:var(--gold); margin:18px auto; }
+
 .products {
-  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px;
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px;
 }
 .product {
-  background: linear-gradient(145deg, #171610, #0d0d0b);
-  border: 1px solid var(--line); padding: 27px;
-  display: flex; flex-direction: column; align-items: flex-start;
-  transition: border-color .2s, transform .2s;
+  background:linear-gradient(145deg,#171610,#0d0d0b);
+  border:1px solid var(--line); padding:27px;
+  display:flex; flex-direction:column; align-items:flex-start;
+  transition:.2s;
 }
-.product:hover { border-color: var(--gold); transform: translateY(-3px); }
-.product-no { color: var(--gold); letter-spacing: 3px; font-size: 11px; }
-.product h3 { font-size: 25px; line-height: 1.3; margin: 13px 0; font-weight: 400; }
-.product p { color: var(--muted); font-size: 14px; }
-.product-highlights { display: flex; flex-wrap: wrap; gap: 8px; margin: 17px 0; }
+.product:hover { border-color:var(--gold); transform:translateY(-3px); }
+.product-no { color:var(--gold); letter-spacing:3px; font-size:11px; }
+.product h3 { font-size:25px; line-height:1.3; margin:13px 0; font-weight:400; }
+.product p { color:var(--muted); font-size:14px; }
+.product-highlights { display:flex; flex-wrap:wrap; gap:8px; margin:17px 0; }
 .product-highlights span {
-  border: 1px solid var(--gold); color: var(--gold-light);
-  padding: 4px 9px; font-size: 10px; letter-spacing: .7px;
+  border:1px solid var(--gold); color:var(--light);
+  padding:4px 9px; font-size:10px; letter-spacing:.7px;
 }
-.price { color: var(--gold-light); font-size: 24px; margin: 4px 0 16px; }
-.product-actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: auto; padding-top: 10px; }
-.product-actions .btn { padding: 10px 13px; }
-.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; align-items: center; }
-.about-panel, .step, .faq-item {
-  background: var(--panel); border: 1px solid var(--line); padding: 24px;
+.price { color:var(--light); font-size:24px; margin:4px 0 16px; }
+.product-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top:auto; padding-top:10px; }
+.product-actions .btn { padding:10px 13px; }
+
+.about-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; }
+.about-panel,.step,.faq-item {
+  background:var(--panel); border:1px solid var(--line); padding:24px;
 }
-.about-panel h3, .step h3 { color: var(--gold-light); margin-bottom: 9px; font-size: 21px; }
-.about-panel p, .step p { color: var(--muted); font-size: 14px; }
-.steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-.step-number { color: var(--gold); font-family: Georgia, serif; font-size: 30px; margin-bottom: 8px; }
-.faqs { max-width: 800px; margin: auto; display: grid; gap: 12px; }
-.faq-item h3 { font-family: Arial, sans-serif; font-size: 15px; margin-bottom: 7px; }
-.faq-item p { color: var(--muted); font-size: 14px; }
+.about-panel h3,.step h3 { color:var(--light); margin-bottom:9px; font-size:21px; }
+.about-panel p,.step p { color:var(--muted); font-size:14px; }
+.steps { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+.step-number { color:var(--gold); font-family:Georgia,serif; font-size:30px; margin-bottom:8px; }
+.faqs { max-width:800px; margin:auto; display:grid; gap:12px; }
+.faq-item h3 { font-family:Arial,sans-serif; font-size:15px; margin-bottom:7px; }
+.faq-item p { color:var(--muted); font-size:14px; }
+
 .payment-box {
-  max-width: 580px; margin: auto; padding: 30px;
-  background: var(--panel); border: 1px solid var(--gold); text-align: center;
+  max-width:580px; margin:auto; padding:30px;
+  background:var(--panel); border:1px solid var(--gold); text-align:center;
 }
-.payment-box img { display: block; width: min(100%, 290px); margin: 20px auto; background: white; padding: 8px; }
-.payment-box p { color: var(--muted); font-size: 14px; }
-.note { color: var(--muted); font-size: 12px; margin-top: 16px; }
-footer { border-top: 1px solid var(--line); padding: 28px 22px; text-align: center; color: var(--muted); font-size: 12px; }
-footer .brand { display: block; margin-bottom: 7px; }
+.payment-box img {
+  display:block; width:min(100%,290px); margin:20px auto;
+  background:white; padding:8px;
+}
+.payment-box p { color:var(--muted); font-size:14px; }
+.note { color:var(--muted); font-size:12px; margin-top:16px; }
+
+footer {
+  border-top:1px solid var(--line); padding:28px 22px;
+  text-align:center; color:var(--muted); font-size:12px;
+}
+footer .brand { display:block; margin-bottom:7px; }
+
 .modal {
-  display: none; position: fixed; inset: 0; z-index: 50;
-  background: rgba(0,0,0,.86); padding: 18px;
-  align-items: center; justify-content: center;
+  display:none; position:fixed; inset:0; z-index:50;
+  background:rgba(0,0,0,.86); padding:18px;
+  align-items:center; justify-content:center;
 }
-.modal.show { display: flex; }
+.modal.show { display:flex; }
 .modal-box {
-  width: min(100%, 550px); max-height: 88vh; overflow-y: auto;
-  background: #11110e; border: 1px solid var(--gold); padding: 28px;
-  position: relative;
+  width:min(100%,550px); max-height:88vh; overflow-y:auto;
+  background:#11110e; border:1px solid var(--gold);
+  padding:28px; position:relative;
 }
 .close {
-  position: absolute; top: 9px; right: 14px; border: 0;
-  background: transparent; color: var(--gold-light); font-size: 27px;
+  position:absolute; top:9px; right:14px; border:0;
+  background:transparent; color:var(--light); font-size:27px;
 }
-.modal-box h2 { font-size: 30px; padding-right: 25px; line-height: 1.25; }
-.modal-box p { color: var(--muted); margin: 14px 0; }
-.modal-box ul { list-style: none; margin: 17px 0 22px; }
-.modal-box li { padding: 7px 0; border-bottom: 1px solid var(--line); }
-.modal-box li::before { content: "✦ "; color: var(--gold); }
+.modal-box h2 { font-size:30px; padding-right:25px; line-height:1.25; }
+.modal-box p { color:var(--muted); margin:14px 0; }
+.modal-box ul { list-style:none; margin:17px 0 22px; }
+.modal-box li { padding:7px 0; border-bottom:1px solid var(--line); }
+.modal-box li::before { content:"✦ "; color:var(--gold); }
+
+/* MOBILE HAMBURGER MENU */
 @media(max-width:700px) {
-  .nav { align-items: flex-start; flex-direction: column; }
-  .nav-links { gap: 12px 17px; }
-  .hero { min-height: 450px; padding: 70px 20px; }
-  .products, .about-grid, .steps { grid-template-columns: 1fr; }
-  section { padding: 58px 18px; }
-  .product { padding: 23px; }
+  .nav {
+    position:relative; flex-direction:row;
+    flex-wrap:wrap; align-items:center; gap:12px;
+    padding:16px 20px;
+  }
+  .brand { font-size:21px; }
+  .menu-toggle { display:block; margin-left:auto; }
+  .nav-links {
+    display:none; width:100%; flex-direction:column;
+    align-items:stretch; gap:0; padding-top:10px;
+  }
+  .nav-links.open { display:flex; }
+  .nav-links a {
+    padding:12px 5px;
+    border-top:1px solid var(--line);
+    font-size:14px;
+  }
+  .products,.about-grid,.steps { grid-template-columns:1fr; }
+  .hero { min-height:450px; padding:65px 20px; }
+  section { padding:58px 18px; }
+  .product { padding:23px; }
+  .product-actions { width:100%; }
+  .product-actions .btn { flex:1; }
+  .payment-box { padding:22px 16px; }
 }
 </style>
 </head>
-<body>
 
+<body>
 <header>
   <nav class="nav">
-    <a class="brand" href="#home">TRADE & STUDY</a>
-    <div class="nav-links">
+    <a class="brand" href="#home">TRADE &amp; STUDY</a>
+
+    <button class="menu-toggle" id="menu-toggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
       <a href="#home">Home</a>
       <a href="#shop">Collection</a>
       <a href="#about">About</a>
@@ -193,7 +244,7 @@ footer .brand { display: block; margin-bottom: 7px; }
     <div class="about-grid">
       <div>
         <h3 style="font-size:29px;font-weight:400;margin-bottom:15px;">Less confusion. More understanding.</h3>
-        <p style="color:var(--muted);">Trade & Study brings trading education into a format that is easier to read, review and learn from. Our guides focus on explaining concepts in accessible Hinglish.</p>
+        <p style="color:var(--muted);">Trade &amp; Study brings trading education into a format that is easier to read, review and learn from. Our guides focus on explaining concepts in accessible Hinglish.</p>
       </div>
       <div class="about-panel">
         <h3>Made for Self-Learners</h3>
@@ -210,15 +261,15 @@ footer .brand { display: block; margin-bottom: 7px; }
 <section id="how">
   <div class="container">
     <div class="section-head">
-      <div class="eyebrow">Simple & Straightforward</div>
+      <div class="eyebrow">Simple &amp; Straightforward</div>
       <h2>How to Order</h2>
       <div class="gold-line"></div>
       <p>Follow these steps to request your guide.</p>
     </div>
     <div class="steps">
       <div class="step"><div class="step-number">01</div><h3>Choose a Guide</h3><p>Explore the collection and select the PDF you want.</p></div>
-      <div class="step"><div class="step-number">02</div><h3>Make Payment</h3><p>Check the displayed payment details and pay ₹199 for your selected guide.</p></div>
-      <div class="step"><div class="step-number">03</div><h3>Submit the Form</h3><p>Fill in the order form with the requested details. Delivery is arranged after payment verification.</p></div>
+      <div class="step"><div class="step-number">02</div><h3>Make Payment</h3><p>Confirm the payment details and pay ₹199 for your selected guide.</p></div>
+      <div class="step"><div class="step-number">03</div><h3>Submit the Form</h3><p>Fill in the order form. Delivery is arranged after payment verification.</p></div>
     </div>
   </div>
 </section>
@@ -231,11 +282,11 @@ footer .brand { display: block; margin-bottom: 7px; }
       <div class="gold-line"></div>
     </div>
     <div class="faqs">
-      <div class="faq-item"><h3>What format are the guides?</h3><p>Each guide is a digital PDF. The guides are described as 25+ pages and written in Hinglish.</p></div>
+      <div class="faq-item"><h3>What format are the guides?</h3><p>Each guide is a digital PDF described as 25+ pages and written in Hinglish.</p></div>
       <div class="faq-item"><h3>How much does one guide cost?</h3><p>Each listed guide costs ₹199.</p></div>
-      <div class="faq-item"><h3>How do I receive my PDF?</h3><p>Submit the order form and provide the requested details. The order is processed after payment verification; delivery is intended within 24 hours.</p></div>
-      <div class="faq-item"><h3>Will these guides guarantee profit?</h3><p>No. Trading involves risk. These are educational materials and do not guarantee results or returns.</p></div>
-      <div class="faq-item"><h3>Can I get a refund?</h3><p>Please confirm the refund and cancellation terms with the seller before placing your order.</p></div>
+      <div class="faq-item"><h3>How do I receive my PDF?</h3><p>Submit the order form. Orders are processed after payment verification, with intended delivery within 24 hours.</p></div>
+      <div class="faq-item"><h3>Are profits guaranteed?</h3><p>No. Trading involves risk. These guides are educational materials and do not guarantee results.</p></div>
+      <div class="faq-item"><h3>What about refunds?</h3><p>Please confirm the refund and cancellation terms with the seller before ordering.</p></div>
     </div>
   </div>
 </section>
@@ -244,7 +295,7 @@ footer .brand { display: block; margin-bottom: 7px; }
   <div class="container">
     <div class="section-head">
       <div class="eyebrow">Secure Your Order</div>
-      <h2>Payment & Order Form</h2>
+      <h2>Payment &amp; Order Form</h2>
       <div class="gold-line"></div>
       <p>Select a guide above to see its order details.</p>
     </div>
@@ -252,21 +303,22 @@ footer .brand { display: block; margin-bottom: 7px; }
       <div class="eyebrow">Selected Guide</div>
       <h3 id="selected-title" style="font-size:25px;font-weight:400;">Choose a product first</h3>
       <div class="price">₹199</div>
-      <p>Scan the QR code only after confirming the recipient and payment details.</p>
-      <img src="Picsart_26-10-30_01-28-16-907.jpg" alt="Payment QR code" onerror="this.style.display='none';document.getElementById('qr-error').style.display='block';">
-      <p id="qr-error" style="display:none;color:#e6a6a6;">QR image not found. Check the filename in your GitHub repository.</p>
+      <p>Verify the recipient and payment details before paying.</p>
+      <img src="Picsart_26-10-30_01-28-16-907.jpg" alt="Payment QR code"
+        onerror="this.style.display='none';document.getElementById('qr-error').style.display='block';">
+      <p id="qr-error" style="display:none;color:#e6a6a6;">QR image not found. Check the filename in your repository.</p>
       <a class="btn btn-primary" href="https://forms.gle/4fMuhS5LZpMghwF26" target="_blank" rel="noopener">Continue to Order Form</a>
-      <p class="note">Submit your order after making payment. Orders are fulfilled after payment verification. Please retain your transaction reference.</p>
+      <p class="note">Submit your order after payment. Fulfilment follows payment verification. Keep your transaction reference.</p>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <span class="brand">TRADE & STUDY</span>
+  <span class="brand">TRADE &amp; STUDY</span>
   <p>Educational resources for learning trading concepts.</p>
-  <p>Trading involves financial risk. No profits or outcomes are guaranteed.</p>
-  <p style="margin-top:10px;">© <span id="year"></span> Trade & Study. All rights reserved.</p>
+  <p>Trading involves financial risk. No outcomes are guaranteed.</p>
+  <p style="margin-top:10px;">© <span id="year"></span> Trade &amp; Study. All rights reserved.</p>
 </footer>
 
 <div class="modal" id="details-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -275,12 +327,12 @@ footer .brand { display: block; margin-bottom: 7px; }
     <div class="eyebrow">Product Details</div>
     <h2 id="modal-title"></h2>
     <div class="product-highlights">
-      <span>📄 25+ PAGES</span><span>🌐 HINGLISH</span><span>DIGITAL PDF</span>
+      <span>25+ PAGES</span><span>HINGLISH</span><span>DIGITAL PDF</span>
     </div>
     <p id="modal-description"></p>
     <ul>
       <li>25+ pages of educational content</li>
-      <li>Hinglish explanations for easier reading</li>
+      <li>Hinglish explanations</li>
       <li>Digital PDF format</li>
       <li>Learn and revise at your own pace</li>
     </ul>
@@ -292,28 +344,28 @@ footer .brand { display: block; margin-bottom: 7px; }
 <script>
 const products = [
   {
-    id: 1,
-    title: "ICT & Smart Money Concepts",
-    description: "Explore ICT and Smart Money Concepts through a structured educational guide.",
-    short: "Understand market structure and Smart Money concepts."
+    id:1,
+    title:"ICT & Smart Money Concepts",
+    description:"Explore ICT and Smart Money Concepts through a structured educational guide.",
+    short:"Understand market structure and Smart Money concepts."
   },
   {
-    id: 2,
-    title: "Support & Resistance Mastery",
-    description: "Learn the fundamentals of support and resistance and how these concepts are discussed in technical analysis.",
-    short: "Study key price levels and their role in chart analysis."
+    id:2,
+    title:"Support & Resistance Mastery",
+    description:"Learn support and resistance fundamentals and their role in technical analysis.",
+    short:"Study key price levels and chart analysis."
   },
   {
-    id: 3,
-    title: "Breakout & Fakeout Strategy Guide",
-    description: "Explore breakout and fakeout concepts and learn why traders study price movement around key levels.",
-    short: "Learn about breakouts, false moves and key levels."
+    id:3,
+    title:"Breakout & Fakeout Strategy Guide",
+    description:"Explore breakout and fakeout concepts around important price levels.",
+    short:"Learn about breakouts, false moves and key levels."
   },
   {
-    id: 4,
-    title: "Master Breaker & Rejection Blocks",
-    description: "Explore breaker and rejection block concepts as part of technical chart education.",
-    short: "Study breaker and rejection block terminology."
+    id:4,
+    title:"Master Breaker & Rejection Blocks",
+    description:"Explore breaker and rejection block concepts in technical chart education.",
+    short:"Study breaker and rejection block terminology."
   }
 ];
 
@@ -321,7 +373,7 @@ const productList = document.getElementById("product-list");
 const modal = document.getElementById("details-modal");
 let activeProduct = products[0];
 
-products.forEach((product) => {
+products.forEach(product => {
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
@@ -329,8 +381,8 @@ products.forEach((product) => {
     <h3>${product.title}</h3>
     <p>${product.short}</p>
     <div class="product-highlights">
-      <span>📄 25+ PAGES</span>
-      <span>🌐 HINGLISH</span>
+      <span>25+ PAGES</span>
+      <span>HINGLISH</span>
     </div>
     <div class="price">₹199</div>
     <div class="product-actions">
@@ -359,17 +411,35 @@ function selectProduct(product) {
   activeProduct = product;
   document.getElementById("selected-title").textContent = product.title;
   closeDetails();
-  document.getElementById("payment").scrollIntoView({behavior: "smooth"});
+  document.getElementById("payment").scrollIntoView({behavior:"smooth"});
 }
 
 document.getElementById("close-modal").addEventListener("click", closeDetails);
 document.getElementById("modal-buy").addEventListener("click", () => selectProduct(activeProduct));
-modal.addEventListener("click", (event) => {
+modal.addEventListener("click", event => {
   if (event.target === modal) closeDetails();
 });
-document.addEventListener("keydown", (event) => {
+document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeDetails();
 });
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  const isOpen = navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded", String(isOpen));
+  menuToggle.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation menu");
+  });
+});
+
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
